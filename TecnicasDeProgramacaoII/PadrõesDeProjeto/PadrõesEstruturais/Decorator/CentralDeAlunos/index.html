@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Alunos</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        h1, h2{
+            text-align: left;
+            color: #c01592;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button{
+            margin-top: 20px;
+            background-color: #c01592;
+            color: #fff;
+            border: #c01592;
+            border-radius: 20px;
+            padding: 1rem;
+            font-weight: bold;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        #total-pedido{
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        label{
+            color: #c01592;
+        }
+
+        #total-pedido{
+            color: #c01592;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Central de Alunos</h1>
+  
+    <h2>Escolha seu curso</h2>
+    <label>
+        <input type="radio" name="sabor" value="Margherita" data-sabor="Margherita"> Margherita
+    </label>
+    
+    <label>
+        <input type="radio" name="sabor" value="Calabresa" data-sabor="Calabresa"> Calabresa
+    </label>
+    <label>
+        <input type="radio" name="sabor" value="Frango com Catupiry" data-sabor="Frango com Catupiry">  Frango com Catupiry 
+    </label>
+    <label>
+        <input type="radio" name="sabor" value="Portuguesa" data-sabor="Portuguesa">  Portuguesa 
+    </label>
+    <label>
+        <input type="radio" name="sabor" value="Quatro Queijos" data-sabor="Quatro Queijo">  Quatro Queijos 
+    </label>
+
+    <h2>Selecione o Tamanho da Pizza:</h2>
+    <label>
+        <input type="radio" name="tamanho" value="Pequena" data-tamanho="Pequena">  Pequena +R$15,00
+    </label>
+    <label>
+        <input type="radio" name="tamanho" value="Media" data-tamanho="Media">  Media +R$20,00
+    </label>
+    <label>
+        <input type="radio" name="tamanho" value="Grande" data-tamanho="Grande">  Grande +R$25,00
+    </label>
+
+    <h2>Selecione o Tipo de Borda da Pizza:</h2>
+    <label>
+        <input type="radio" name="borda" value="Tradicional" data-borda="Tradicional">  Tradicional
+    </label>
+    <label>
+        <input type="radio" name="borda" value="Recheada" data-borda="Recheada">  Recheada
+    </label>
+
+    <h2>Selecione os Ingredientes Extras:</h2>
+    <label>
+        <input type="checkbox" name="queijo-extra" data-extra="queijo-extra">  Queijo Extra +R$2,00
+    </label>
+    <label>
+        <input type="checkbox" name="bacon-extra" data-extra="bacon-extra">  Bacon Extra +R$3,00
+    </label>
+    <label>
+        <input type="checkbox" name="pepperoni-extra" data-extra="pepperoni-extra">  Pepperoni Extra +R$4,00
+    </label>
+
+    <button onclick="montarPizza()">Montar Pizza</button>
+
+    <h2>Total do Pedido:</h2>
+    <p id="total-pedido">R$ 0,00</p>
+
+    <script src="Decorator01.js"></script>
+
+</body>
+</html>
