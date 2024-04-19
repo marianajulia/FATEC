@@ -1,11 +1,11 @@
 //Interface Componente
 class Curso{
     constructor(){
-        this.descrição = 'Curso';
+        this.descricao = 'Curso';
     }
 
-    getDescrição(){
-        return this.descrição;
+    getDescricao(){
+        return this.descricao;
     }
 
     custo(){
@@ -17,7 +17,7 @@ class Curso{
 class CursoPersonalizado extends Curso{
     constructor(tipocurso, periodo){
         super();
-        this.descrição = `Curso ${tipocurso} no periodo da ${periodo}`;
+        this.descricao = `Curso ${tipocurso} no periodo da ${periodo}`;
         this.tipocurso = tipocurso;
         this.periodo = periodo;
     }
@@ -30,14 +30,14 @@ class CursoPersonalizado extends Curso{
 }
 
 //Decorator Abstrato:
-class Decorador extends Curso{
+class Decorator extends Curso{
     constructor(curso){
         super();
         this.curso = curso;
     }
 
     getDescrição(){
-        return this.curso.getDescrição();
+        return this.curso.getDescricao();
     }
 
     custo(){
@@ -246,81 +246,81 @@ function montarCurso(){
     let periodo = periodoSelecionado ? periodoSelecionado.value: '';
 
     // Criando Objeto CursoPersonalizada com base nas seleções do usuarios:
-let cursoPersonalizado = new CursoPersonalizado(tipocurso, periodo);
+    let cursoPersonalizado = new CursoPersonalizado(tipocurso, periodo);
 
 // Aplicar decoradores para serviços extras, se selecionados
 
 //Internet
 
-let internet2GbCheckbox = document.querySelector('input[name="internet2Gb"]:checked');
-if (internet2GbCheckbox) {
-    cursoPersonalizado = new Internet2Gb(cursoPersonalizado);
-}
+    let internet2GbCheckbox = document.querySelector('input[name="internet2Gb"]:checked');
+    if (internet2GbCheckbox) {
+        cursoPersonalizado = new Internet2Gb(cursoPersonalizado);
+    }
 
-let internet5GbCheckbox = document.querySelector('input[name="internet5Gb"]:checked');
-if (internet5GbCheckbox) {
-    cursoPersonalizado = new Internet5Gb(cursoPersonalizado);
-}
+    let internet5GbCheckbox = document.querySelector('input[name="internet5Gb"]:checked');
+    if (internet5GbCheckbox) {
+        cursoPersonalizado = new Internet5Gb(cursoPersonalizado);
+    }
 
-let internet10GbCheckbox = document.querySelector('input[name="internet10Gb"]:checked');
-if (internet5GbCheckbox) {
-    cursoPersonalizado = new Internet10Gb(cursoPersonalizado);
-}
+    let internet10GbCheckbox = document.querySelector('input[name="internet10Gb"]:checked');
+    if (internet10GbCheckbox) {
+        cursoPersonalizado = new Internet10Gb(cursoPersonalizado);
+    }
 
-//Estacionamento
-let bicicletaCheckbox = document.querySelector('input[name="bicicleta"]:checked');
-if (bicicletaCheckbox) {
-    cursoPersonalizado = new Bicicleta(cursoPersonalizado);
-}
+    //Estacionamento
+    let bicicletaCheckbox = document.querySelector('input[name="bicicleta"]:checked');
+    if (bicicletaCheckbox) {
+        cursoPersonalizado = new Bicicleta(cursoPersonalizado);
+    }
 
-let motoCheckbox = document.querySelector('input[name="moto"]:checked');
-if (motoCheckbox) {
-    cursoPersonalizado = new Moto(cursoPersonalizado);
-}
+    let motoCheckbox = document.querySelector('input[name="moto"]:checked');
+    if (motoCheckbox) {
+        cursoPersonalizado = new Moto(cursoPersonalizado);
+    }
 
-let carroCheckbox = document.querySelector('input[name="carro"]:checked');
-if (carroCheckbox) {
-    cursoPersonalizado = new Carro(cursoPersonalizado);
-}
+    let carroCheckbox = document.querySelector('input[name="carro"]:checked');
+    if (carroCheckbox) {
+        cursoPersonalizado = new Carro(cursoPersonalizado);
+    }
 
-//Aluguel Armario
-let litros10Checkbox = document.querySelector('input[name="litros10"]:checked');
-if (litros10Checkbox) {
-    cursoPersonalizado = new Litros10(cursoPersonalizado);
-}
+    //Aluguel Armario
+    let litros10Checkbox = document.querySelector('input[name="litros10"]:checked');
+    if (litros10Checkbox) {
+        cursoPersonalizado = new Litros10(cursoPersonalizado);
+    }
 
-let litros20Checkbox = document.querySelector('input[name="litros20"]:checked');
-if (litros20Checkbox) {
-    cursoPersonalizado = new Litros20(cursoPersonalizado);
-}
+    let litros20Checkbox = document.querySelector('input[name="litros20"]:checked');
+    if (litros20Checkbox) {
+        cursoPersonalizado = new Litros20(cursoPersonalizado);
+    }
 
-let litros40Checkbox = document.querySelector('input[name="litros40"]:checked');
-if (litros40Checkbox) {
-    cursoPersonalizado = new Litros40(cursoPersonalizado);
-}
+    let litros40Checkbox = document.querySelector('input[name="litros40"]:checked');
+    if (litros40Checkbox) {
+        cursoPersonalizado = new Litros40(cursoPersonalizado);
+    }
 
-//CursosExtras
-let cursos5Checkbox = document.querySelector('input[name="cursos5"]:checked');
-if (cursos5Checkbox) {
-    cursoPersonalizado = new Cursos5(cursoPersonalizado);
-}
+    //CursosExtras
+    let cursos5Checkbox = document.querySelector('input[name="cursos5"]:checked');
+    if (cursos5Checkbox) {
+        cursoPersonalizado = new Cursos5(cursoPersonalizado);
+    }
 
-let cursos15Checkbox = document.querySelector('input[name="cursos15"]:checked');
-if (cursos15Checkbox) {
-    cursoPersonalizado = new Cursos15(cursoPersonalizado);
-}
+    let cursos15Checkbox = document.querySelector('input[name="cursos15"]:checked');
+    if (cursos15Checkbox) {
+        cursoPersonalizado = new Cursos15(cursoPersonalizado);
+    }
 
-let cursosIlimitadosCheckbox = document.querySelector('input[name="cursosIlimitados"]:checked');
-if (cursosIlimitadosCheckbox) {
-    cursoPersonalizado = new CursosIlimitados(cursoPersonalizado);
-}
+    let cursosIlimitadosCheckbox = document.querySelector('input[name="cursosIlimitados"]:checked');
+    if (cursosIlimitadosCheckbox) {
+        cursoPersonalizado = new CursosIlimitados(cursoPersonalizado);
+    }
 
-// Obter o custo total do serviço  personalizado
-let custoTotal = parseFloat(cursoPersonalizado.custo());
+    // Obter o custo total do serviço  personalizado
+    let custoTotal = parseFloat(cursoPersonalizado.custo());
 
-// Exibir o custo total do pedido
-let totalPedidoElement = document.getElementById("total-pedido");
-totalPedidoElement.textContent = "R$ " + custoTotal.toFixed(2);
+    // Exibir o custo total do pedido
+    let totalPedidoElement = document.getElementById("total-pedido");
+    totalPedidoElement.textContent = "R$ " + custoTotal.toFixed(2);
 
 }
 

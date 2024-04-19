@@ -7,48 +7,33 @@
     <title>Central de Alunos</title>
 
     <style>
-        body{
+        body {
             font-family: Arial, Helvetica, sans-serif;
             text-align: left;
             margin: 0 auto;
             padding: 30px;
         }
-
-        h1, h2{
+    
+        h1,
+        h2 {
             text-align: left;
-            color: #c01592;
         }
-
-        label{
+    
+        label {
             display: block;
             margin-bottom: 10px;
         }
-
-        button{
-            margin-top: 20px;
-            background-color: #c01592;
-            color: #fff;
-            border: #c01592;
-            border-radius: 20px;
-            padding: 1rem;
-            font-weight: bold;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        #total-pedido{
-            font-weight: bold;
+    
+        button {
             margin-top: 20px;
         }
-
-        label{
-            color: #c01592;
-        }
-
-        #total-pedido{
-            color: #c01592;
+    
+        #total-pedido {
+            font-weight: bold;
+            margin-top: 20px;
         }
     </style>
+
 </head>
 
 <body>
@@ -56,58 +41,86 @@
   
     <h2>Escolha seu curso</h2>
     <label>
-        <input type="radio" name="sabor" value="Margherita" data-sabor="Margherita"> Margherita
+        <input type="radio" name="tipocurso" value="Curso1" data-tipocurso="Curso1"> Curso1
     </label>
     
     <label>
-        <input type="radio" name="sabor" value="Calabresa" data-sabor="Calabresa"> Calabresa
-    </label>
-    <label>
-        <input type="radio" name="sabor" value="Frango com Catupiry" data-sabor="Frango com Catupiry">  Frango com Catupiry 
-    </label>
-    <label>
-        <input type="radio" name="sabor" value="Portuguesa" data-sabor="Portuguesa">  Portuguesa 
-    </label>
-    <label>
-        <input type="radio" name="sabor" value="Quatro Queijos" data-sabor="Quatro Queijo">  Quatro Queijos 
+        <input type="radio" name="tipocurso" value="Curso2" data-tipocurso="Curso2"> Curso2
     </label>
 
-    <h2>Selecione o Tamanho da Pizza:</h2>
     <label>
-        <input type="radio" name="tamanho" value="Pequena" data-tamanho="Pequena">  Pequena +R$15,00
-    </label>
-    <label>
-        <input type="radio" name="tamanho" value="Media" data-tamanho="Media">  Media +R$20,00
-    </label>
-    <label>
-        <input type="radio" name="tamanho" value="Grande" data-tamanho="Grande">  Grande +R$25,00
+        <input type="radio" name="tipocurso" value="Curso3" data-tipocurso="Curso3"> Curso3
     </label>
 
-    <h2>Selecione o Tipo de Borda da Pizza:</h2>
+    <h2>Escolha o periodo</h2>
+    
     <label>
-        <input type="radio" name="borda" value="Tradicional" data-borda="Tradicional">  Tradicional
-    </label>
-    <label>
-        <input type="radio" name="borda" value="Recheada" data-borda="Recheada">  Recheada
+        <input type="radio" name="periodo" value="Manha" data-periodo="Manha">  Manhã
     </label>
 
-    <h2>Selecione os Ingredientes Extras:</h2>
     <label>
-        <input type="checkbox" name="queijo-extra" data-extra="queijo-extra">  Queijo Extra +R$2,00
-    </label>
-    <label>
-        <input type="checkbox" name="bacon-extra" data-extra="bacon-extra">  Bacon Extra +R$3,00
-    </label>
-    <label>
-        <input type="checkbox" name="pepperoni-extra" data-extra="pepperoni-extra">  Pepperoni Extra +R$4,00
+        <input type="radio" name="periodo" value="Tarde" data-periodo="Tarde">  Tarde 
     </label>
 
-    <button onclick="montarPizza()">Montar Pizza</button>
+    <label>
+        <input type="radio" name="periodo" value="Noite" data-periodo="Noite"> Noite
+    </label>
 
-    <h2>Total do Pedido:</h2>
+    <h2>Serviços Adicionais</h2>
+    <h2>Internet</h2>
+
+    <label>
+        <input type="checkbox" name="internet2Gb" data-extra="internet2Gb"> internet 2Gb + R$9,90
+    </label>
+    <label>
+        <input type="checkbox" name="internet5Gb" data-extra="internet5Gb"> internet 5Gb + R$19,90
+    </label>
+    <label>
+        <input type="checkbox" name="internet10Gb" data-extra="internet10Gb"> internet 10Gb + R$29,90
+    </label>
+
+    <h2>Estacionamento</h2>
+    
+    <label>
+        <input type="checkbox" name="bicicleta" data-extra="bicicleta"> Bicicleta + R$30,00
+    </label>
+    <label>
+        <input type="checkbox" name="moto" data-extra="moto"> Moto + R$60,00
+    </label>
+    <label>
+        <input type="checkbox" name="carro" data-extra="carro"> Carro + R$120,00
+    </label>
+
+    <h2>Aluguel Armario</h2>
+    
+    <label>
+        <input type="checkbox" name="litros10" data-extra="litros10"> 10 Litros + R$6,00
+    </label>
+    <label>
+        <input type="checkbox" name="litros20" data-extra="litros20"> 20 Litros + R$10,00
+    </label>
+    <label>
+        <input type="checkbox" name="litros40" data-extra="litros40"> 40 Litros + R$15,00
+    </label>
+
+    <h2>Cursos Extras</h2>
+    
+    <label>
+        <input type="checkbox" name="cursos5" data-extra="cursos5"> Plataforma EAD 5 cursos + R$ 9,90
+    </label>
+    <label>
+        <input type="checkbox" name="cursos15" data-extra="cursos15"> Plataforma EAD 15 cursos + R$ 19,99
+    </label>
+    <label>
+        <input type="checkbox" name="cursosIlimitados" data-extra="cursosIlimitados"> Plataforma EAD ilimitado + R$ 24,90
+    </label>
+
+    <button onclick="montarCurso()">Calcular Serviço</button>
+
+    <h2>Total: </h2>
     <p id="total-pedido">R$ 0,00</p>
 
-    <script src="Decorator01.js"></script>
+    <script src="Decorator02.js"></script>
 
 </body>
 </html>
