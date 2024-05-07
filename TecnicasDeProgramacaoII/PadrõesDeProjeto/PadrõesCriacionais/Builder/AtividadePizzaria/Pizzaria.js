@@ -5,7 +5,7 @@
 //Nome: Mariana Julia Macedo Da Silva  
 //data: 23/02/2024
 //Descrição: Aplicação de padrão GoF - Atividade - Pizzaria
- 
+//
 const prompt = require('prompt-sync')();
  
 //Itens da Pizza
