@@ -137,4 +137,144 @@ class TUReq16EmissaoDaFaturaTests {
 					}	
 	}
 
+	@Test
+    void ct07_quando_data_invalida_mensagem_de_erro() {
+        try {
+            // dado que as informacoes de fatura sao inválidas - Data Inválida
+            // quando confirmo a fatura
+            LocalDate dataVencimento = LocalDate.parse("04/09/2025", formatter);
+            fatura = new Fatura("39086360009", dataVencimento, "moveis planejados", "1000.50");
+            assertEquals("2025-09-04", fatura.getDataVencimento().toString());
+ 
+ 
+        } catch (Exception e) {
+ 
+            logger.info(">>>>>> ct07 - fatura invalida => " + e.getMessage());
+            fail("Não deveria falhar");
+            //assertEquals("Data de vencimento: formato invalido ou domingo ou menor que data atual", e.getMessage());
+        }
+    }
+
+	@Test
+    void ct02_quando_data_invalida_mensagem_erro() {
+        try {
+            // dado que as informacoes de fatura sao invalidas - Data Invalida
+            // quando confirmo a fatura
+            LocalDate dataVencimento = LocalDate.parse("04/09/2025", formatter);
+           
+            fatura = new Fatura("39086360009", dataVencimento, "moveis planejados", "1000.50");
+ 
+            assertEquals("04/09/2025", fatura.getDataVencimento().format(formatter));
+ 
+ 
+        } catch (Exception e) {
+            logger.info(">>>>>> ct02 - fatura invalida => " + e.getMessage());
+            fail("não deveria falhar");
+           
+           
+ 
+           
+        }
+    }
+
+	@Test
+    void ct08_quando_data_valida_fatura_emitida_com_sucesso() {
+        try {
+            // dado que as informacoes de fatura sao válidas
+            // quando confirmo a fatura
+            LocalDate dataVencimento = LocalDate.parse("04/09/2025", formatter);
+            fatura = new Fatura("39086360009", dataVencimento, "moveis planejados", "1000.50");
+            //Então retorna data formatada
+            assertEquals("2025-09-04", fatura.getDataVencimento().toString());
+ 
+ 
+        } catch (Exception e) {
+ 
+            logger.info(">>>>>> ct08 - mensagem de erro => " + e.getMessage());
+            fail("Não deveria falhar");
+        }
+    }
+ 
+    @Test
+    void ct09_quando_data_valida_fatura_emitida_com_sucesso() {
+        try {
+            // dado que as informacoes de fatura sao validas
+            LocalDate dataVencimento = LocalDate.parse("04/09/2025", formatter);
+           
+            // quando confirmo a fatura
+            fatura = new Fatura("39086360009", dataVencimento, "moveis planejados", "1000.50");
+ 
+            // então validação de formato retornado com sucesso
+            assertEquals("04/09/2025", fatura.getDataVencimento().format(formatter));
+ 
+ 
+        } catch (Exception e) {
+            logger.info(">>>>>> ct09 - mensagem de erro => " + e.getMessage());
+            fail("não deveria falhar");
+        }
+    }
+
+	@Test
+	void ct10_quando_data_valida_fatura_emtida_com_sucesso() {
+		try {
+		// dado que as informacoes de fatura sao inválidas - Data válida
+		LocalDate dataVencimento = LocalDate.parse("31/02/2026", formatter);
+		// quando confirmo a fatura
+		fatura = new Fatura("39086360009", dataVencimento, "moveis planejados", "1000.50");
+		// Então retorna data formatada
+		assertEquals("28/02/2026", fatura.getDataVencimento().format(formatter));
+		} catch (Exception e) {
+		logger.info(">>>>>> ct10 - mensagem de erro => " + e.getMessage());
+		fail("Não deveria falhar");
+		}
 }
+
+@Test
+    void ct11_quando_data_invalida_menssagem_erro() {
+        try {
+            // dado que as informacoes de fatura sao inválidas - Data válida
+            LocalDate dataVencimento = LocalDate.parse("/02/2026", formatter);
+            // quando confirmo a fatura
+            fatura = new Fatura("39086360009", dataVencimento, "moveis planejados", "1000.50");
+            // Então retorna data formatada
+            fail("Deveria falhar");
+        } catch (Exception e) {
+            logger.info(">>>>>> ct11 - mensagem de erro => " + e.getMessage());
+            assertEquals("Text '/02/2026' could not be parsed at index 0", e.getMessage());
+        }
+    }
+
+    @Test
+
+    void ct12_quando_data_invalida_mensagem_de_erro() {
+
+        try {
+            // dado que as informacoes de data sao válidas
+            LocalDate dataVencimento = LocalDate.parse("", formatter);
+            // quando confirmo a fatura
+            fatura = new Fatura("39086360009", dataVencimento, "moveis planejados", "1000.50");
+            //então validação de formato retornado com sucesso
+            fail("Deveria falhar");
+        } catch (Exception e) {
+            logger.info(">>>>>> ct12 - mensaegem de erro => " + e.getMessage());
+            assertEquals("Text '' could not be parsed at index 0", e.getMessage());
+        }
+    }
+
+    @Test
+    void ct13_quando_data_invalida_mensagem_de_erro() {
+    try {
+    // dado que as informacoes de data sao inválidas
+    LocalDate dataVencimento = LocalDate.parse(" ", formatter);
+    // quando confirmo a fatura
+    fatura = new Fatura("39086360009", dataVencimento, "moveis planejados", "1000.50");
+    // então validação de formato retornado com sucesso
+    fail("Deveria falhar");
+    } catch (Exception e) {
+        logger.info(">>>>>> ct12 - mensaegem de erro => " + e.getMessage());
+        assertEquals("Text ' ' could not be parsed at index 0", e.getMessage());
+    }}
+
+}
+
+
